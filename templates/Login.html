@@ -12,12 +12,18 @@
 			<p><input type=submit value=Login>
     	</form>
     {% else: %}
-    	<p>You are logged in and have full access to this page.</p>
+    	<p>You are logged in and have full access to the tools on this page.</p>
     	<a href="{{url_for('logout')}}"><button>Logout</button></a>
     {% endif %}
     
     <a href="http://localhost:5003/"><h2>The ATGU's Gene Lookup Service</h2></a>
     <a href="http://localhost:5002/"><h2>SOME: the Significance of Mutation Engine</h2></a>
     <a href="http://localhost:5001/"><h2>List Crusher</h2></a>
+    
+    <h2>Studies Used:</h2>
+    <iframe src="http://localhost:5003/getStudies" seamless width="100%"></iframe>
+    <h2>Distribution of Mutation Types:</h2>
+    <iframe src="http://localhost:5003/getMutationInfo" seamless width="100%"></iframe>
+    
 </body>
 </html>
