@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <head>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-affix.js" type="text/javascript" charset="utf-8"></script>
 	<title>ATGU Web Utilities</title>
 </head>
 
 <body>
-	<h1>Welcome to the ATGU's Web Utility Page</h1>
+<div class="row">
+<div class="col-12 col-sm-12 col-lg-12">
+	<h1 style="text-align: center;">Welcome to the ATGU's Web Utility Page</h1>
 	{% if loggedIn == False: %}
 		<p>Usage of some of the tools on this page is restricted.<br>Login here for full access.</p> 
 		<form action="{{url_for('login')}}" method="post">
 			<p><input type=text name=username>
-			<p><input type=submit value=Login>
+			<input type=submit value=Login>
     	</form>
     {% else: %}
     	<p>You are logged in and have full access to the tools on this page.</p>
     	<a href="{{url_for('logout')}}"><button>Logout</button></a>
     {% endif %}
-    
-    <a href="http://localhost:5003/"><h2>The ATGU's Gene Lookup Service</h2></a>
-    <a href="http://localhost:5002/"><h2>SOME: the Significance of Mutation Engine</h2></a>
-    <a href="http://localhost:5001/"><h2>List Crusher</h2></a>
-    
-    <h2>Studies Used:</h2>
-    <iframe src="http://localhost:5003/getStudies" seamless width="100%"></iframe>
-    <h2>Distribution of Mutation Types:</h2>
-    <iframe src="http://localhost:5003/getMutationInfo" seamless width="100%"></iframe>
-    
+    <p>---------------------------------------------------------------</p>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-sm-6 col-lg-6">
+<div style="margin-left: 1em;">
+    <h2 style="margin: 0;">Tools:</h2>
+    <a href="http://localhost:5003/"><h3>The ATGU's Gene Lookup Service</h3></a>
+    <a href="http://localhost:5002/"><h3>SOME: the Significance of Mutation Engine</h3></a>
+    <a href="http://localhost:5001/"><h3>List Crusher</h3></a>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-6">
+    <h2>Other Information:</h2>
+    <h3 style="margin: 0;">Studies Used:</h3>
+    <iframe frameborder="1" id="studyListIFrame" style="margin-right: 10em;"src="http://localhost:5003/getStudies" height="200px" width="100%"></iframe>
+    <h3 style="margin: 0;">Distribution of Mutation Types:</h3>
+    <iframe frameborder="1" id="mutInfoIFrame" src="http://localhost:5003/getMutationInfo" height="200px" width="100%"></iframe>
+</div>
+</div>
+    <div id="footer">
+		<p id="legal" style="margin: 0; font-size: 0.75em;">Copyright © 2013 ATGU. All Rights Reserved <br>
+		<a href="http://www.massgeneral.org">Massachusetts General Hospital</a> | 
+		<a href="http://chgr.mgh.harvard.edu">Center for Human Genetic Research</a></p>
+	</div>
+	<script language="JavaScript">
+		/*window.onload = function(){
+			autoResize('studyListIFrame');
+			autoResize('mutInfoIFrame');
+		}
+		function autoResize(id){
+			alert("resize called: "+id);
+		    var newheight;
+		    var newwidth;
+		
+		    //if(document.getElementById){
+		    alert("before");
+		    	alert("height "+document.getElementById(id).contentWindow.document.body.scrollHeight);
+				alert("heightiehbodidg");
+				newheight=document.getElementById(id).contentWindow.document.body.scrollHeight;
+		        newwidth=document.getElementById(id).contentWindow.document.body.scrollWidth;
+		   // }
+			alert("after");
+		    document.getElementById(id).height= (newheight) + "px";
+		    document.getElementById(id).width= (newwidth) + "px";
+		    alert("done"+newweight+newwidth);
+		}*/
+	</script>
 </body>
 </html>

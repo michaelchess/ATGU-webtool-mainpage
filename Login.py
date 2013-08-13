@@ -4,10 +4,12 @@ from flask import Flask, request, Response, session, g, redirect, url_for, \
 DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
-
+#app.config.from_envvar('WebTools_Settings')
 
 @app.route('/')
 def index():
+	print url_for('logout', _external=True)
+	print app.config['SERVER_NAME']
 	if 'username' in session:
 		return render_template('Login.html', loggedIn = True)
 	else:
