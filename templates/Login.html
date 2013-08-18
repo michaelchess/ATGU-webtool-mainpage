@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 </head>
 
 <body>
+
 <div class="row">
 <div class="col-12 col-sm-12 col-lg-12">
 <div style="margin-left: 1em;">
@@ -26,21 +28,23 @@
 </div>
 </div>
 </div>
+
 <div class="row">
 <div class="col-12 col-sm-6 col-lg-6">
 <div style="margin-left: 2em;">
     <h2 style="margin: 0;">Tools:</h2>
-    <a href="http://localhost:5003/"><h3>The ATGU's Gene Lookup Service</h3></a>
+    <a href="http://localhost:5003/"><h3>Gene Mutation Constraint Server</h3></a>
     <a href="http://localhost:5002/"><h3>SOME: the Significance of Mutation Engine</h3></a>
     <a href="http://localhost:5001/"><h3>List Crusher</h3></a>
 </div>
 </div>
+
 <div class="col-12 col-sm-6 col-lg-6">
     <h2>Other Information:</h2>
     <h3 style="margin: 0;">Studies Used:</h3>
-    <iframe frameborder="1" id="studyListIFrame" style="margin-right: 10em;"src="http://localhost:5003/getStudies" height="200px" width="100%"></iframe>
+    <iframe frameborder="1" id="studyListIFrame" style="margin-right: 10em;"src="http://localhost:5003/getStudies" seamless height="200px" width="100%"></iframe>
     <h3 style="margin: 0;">Distribution of Mutation Types:</h3>
-    <iframe frameborder="1" id="mutInfoIFrame" src="http://localhost:5003/getMutationInfo" height="200px" width="100%"></iframe>
+    <iframe frameborder="1" id="mutInfoIFrame" src="http://localhost:5003/getMutationInfo" height="200px" seamless width="100%"></iframe>
 </div>
 </div>
     <div id="footer">
@@ -48,28 +52,5 @@
 		<a href="http://www.massgeneral.org">Massachusetts General Hospital</a> | 
 		<a href="http://chgr.mgh.harvard.edu">Center for Human Genetic Research</a></p>
 	</div>
-	<script language="JavaScript">
-		/*window.onload = function(){
-			autoResize('studyListIFrame');
-			autoResize('mutInfoIFrame');
-		}
-		function autoResize(id){
-			alert("resize called: "+id);
-		    var newheight;
-		    var newwidth;
-		
-		    //if(document.getElementById){
-		    alert("before");
-		    	alert("height "+document.getElementById(id).contentWindow.document.body.scrollHeight);
-				alert("heightiehbodidg");
-				newheight=document.getElementById(id).contentWindow.document.body.scrollHeight;
-		        newwidth=document.getElementById(id).contentWindow.document.body.scrollWidth;
-		   // }
-			alert("after");
-		    document.getElementById(id).height= (newheight) + "px";
-		    document.getElementById(id).width= (newwidth) + "px";
-		    alert("done"+newweight+newwidth);
-		}*/
-	</script>
 </body>
 </html>

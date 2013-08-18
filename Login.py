@@ -44,7 +44,7 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
-# set the secret key.  keep this really secret:
+# set the secret key (keep this the same as other utilities to have cross utility logins)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 
